@@ -2,6 +2,8 @@
 
 A Python desktop application that converts currencies in real-time using live exchange rate data fetched from the [exchangerate-api.com](https://www.exchangerate-api.com/) API, with a Tkinter GUI.
 
+<img width="695" height="834" alt="Image" src="https://github.com/user-attachments/assets/826b42a7-8665-47e4-8f85-fbaecd0f0323" />
+
 ## 📁 Project Structure
 
 ```
