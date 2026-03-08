@@ -1,43 +1,54 @@
-Currency Converter using Python
-Welcome to the Currency Converter project! This is a simple Python program that allows you to convert currency values in real-time using exchange rate data from the exchangerate-api.com API. This README file provides information about the project and how to use it.
+# 💱 Real-Time Currency Converter
 
-How it Works
-The project consists of two Python files:
+A Python desktop application that converts currencies in real-time using live exchange rate data fetched from the [exchangerate-api.com](https://www.exchangerate-api.com/) API, with a Tkinter GUI.
 
-Main.py: This file contains the graphical user interface (GUI) for the currency converter. It uses the Tkinter library to create a simple interface where you can select the source currency, target currency, and enter an amount to convert. It then displays the converted amount in real-time.
+## 📁 Project Structure
 
-Converter.py: This file defines a RealTimeCurrencyConverter class, which is responsible for fetching exchange rate data from the API and performing currency conversions. The class has a convert method that takes the source currency, target currency, and amount as input and returns the converted amount.
+```
+Currency-Converter/
+├── main.py          # Tkinter GUI — run this to start the app
+├── converter.py     # RealTimeCurrencyConverter class (API + conversion logic)
+└── README.md
+```
 
-How to Use
-To use the Currency Converter, follow these steps:
+## 🚀 Getting Started
 
-Clone or download this GitHub repository to your local machine.
+### Prerequisites
 
-Ensure you have Python installed on your system. If not, you can download it from python.org.
+| Requirement | Version |
+|---|---|
+| Python | 3.10 or later |
+| `requests` | Any recent version |
 
-Open a terminal or command prompt and navigate to the project's directory.
 
-Run the Main.py file by executing the following command:
+### Installation
 
-python Main.py
-This will open the Currency Converter GUI.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/pragati-566/Currency-Converter.git
+   cd Currency-Converter
+   ```
 
-Use the following steps within the GUI:
+2. **Install the only dependency**
+   ```bash
+   pip install requests
+   ```
 
-Select the source currency from the left dropdown.
-Enter the amount you want to convert in the text field.
-Select the target currency from the right dropdown.
-Click the "Convert" button.
-The converted amount will be displayed in the white box on the right.
+3. **Run the application**
+   ```bash
+   python main.py
+   ```
 
-You can close the GUI when you're done.
+---
 
-Note
-This project uses exchange rate data from the exchangerate-api.com API. Make sure you have an internet connection while using this application.
+## 🖥️ How to Use
 
-The exchange rates are based on the data provided by the API, and actual exchange rates may vary.
+| Step | Action |
+|---|---|
+| 1 | Select the **source currency** from the left dropdown |
+| 2 | Enter the **amount** you want to convert |
+| 3 | Select the **target currency** from the right dropdown |
+| 4 | Click **Convert** |
+| 5 | The converted amount appears in the result box |
 
-Contributing
-If you'd like to contribute to this project, feel free to fork the repository, make your changes, and create a pull request. We welcome any improvements or additional features to make this Currency Converter even better!
-
-Thank you for using the Currency Converter, and we hope it serves you well! If you have any questions or encounter issues, please don't hesitate to contact the project contributors.
+> Use the **⇄** button to swap the source and target currencies with a single click.
