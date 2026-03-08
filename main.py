@@ -62,6 +62,14 @@ class CurrencyConverterApp(tk.Tk):
         self.resizable(False, False)
         self.configure(bg=BG_DARK)
 
+        # Style the internal Listbox that the Combobox popup uses.
+        # ttk styles do NOT reach this widget, so option_add is required.
+        self.option_add("*TCombobox*Listbox.background",        ENTRY_BG)
+        self.option_add("*TCombobox*Listbox.foreground",        TEXT_PRI)
+        self.option_add("*TCombobox*Listbox.selectBackground",  ACCENT)
+        self.option_add("*TCombobox*Listbox.selectForeground",  "#ffffff")
+        self.option_add("*TCombobox*Listbox.font",              FONT_COMBO)
+
         # State
         self.converter: RealTimeCurrencyConverter | None = None
         self.loading = False
@@ -213,11 +221,33 @@ class CurrencyConverterApp(tk.Tk):
             background=ENTRY_BG,
             foreground=TEXT_PRI,
             arrowcolor=ACCENT,
-            selectbackground=ACCENT2,
+            selectbackground=ENTRY_BG,
             selectforeground=TEXT_PRI,
             bordercolor=ACCENT2,
             lightcolor=ACCENT2,
             darkcolor=ACCENT2,
+        )
+        # Pin colours for readonly / focus / pressed states so Windows
+        # doesn't override with a system selection highlight (white on white).
+        style.map(
+            "Dark.TCombobox",
+            fieldbackground=[
+                ("readonly", "focus", ENTRY_BG),
+                ("readonly", ENTRY_BG),
+            ],
+            foreground=[
+                ("readonly", "focus", TEXT_PRI),
+                ("readonly", TEXT_PRI),
+                ("focus", TEXT_PRI),
+            ],
+            selectbackground=[
+                ("readonly", "focus", ACCENT2),
+                ("readonly", ENTRY_BG),
+            ],
+            selectforeground=[
+                ("readonly", "focus", TEXT_PRI),
+                ("readonly", TEXT_PRI),
+            ],
         )
         combo = ttk.Combobox(
             parent,

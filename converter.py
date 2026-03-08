@@ -14,10 +14,6 @@ class RealTimeCurrencyConverter:
         self.rates: dict = {}
         self._fetch_rates()
 
-    # ------------------------------------------------------------------
-    # Internal helpers
-    # ------------------------------------------------------------------
-
     def _fetch_rates(self) -> None:
         """Download latest exchange rates for *self.base* currency."""
         try:
@@ -34,10 +30,6 @@ class RealTimeCurrencyConverter:
     def get_currencies(self) -> list[str]:
         """Return a sorted list of all available currency codes."""
         return sorted(self.rates.keys())
-
-    # ------------------------------------------------------------------
-    # Public API
-    # ------------------------------------------------------------------
 
     def convert(self, from_currency: str, to_currency: str, amount: float) -> float:
         """
